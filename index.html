@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HOMES WITH BAS | Basil Kawash — Chicagoland Real Estate</title>
+<meta name="description" content="Basil Kawash, Broker at RE/MAX Legends, Team Lead of the REZIDE Group. 71 homes sold, $25.6M career volume, serving Chicago and the southwest suburbs.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --black:#0B0A08;
+    --black2:#121110;
+    --gold:#C9A35A;
+    --gold-dim:#9C7F45;
+    --white:#F5F3EE;
+    --gray:#9A968D;
+    --line:rgba(245,243,238,0.1);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--black); color:var(--white); font-family:'Poppins',sans-serif; line-height:1.6; -webkit-font-smoothing:antialiased;}
+  a{color:inherit; text-decoration:none;}
+  img{display:block; max-width:100%;}
+  .wrap{max-width:1300px; margin:0 auto; padding:0 40px;}
+  ::selection{background:var(--gold); color:var(--black);}
+  .upp{text-transform:uppercase; letter-spacing:0.18em;}
+
+  /* diagonal line texture */
+  .diagbg{position:absolute; inset:0; pointer-events:none; overflow:hidden; z-index:0;}
+  .diagbg svg{position:absolute;}
+  .diagbg .tr{top:-40px; right:-60px; width:420px; height:420px; opacity:0.5;}
+  .diagbg .bl{bottom:-60px; left:-80px; width:380px; height:380px; opacity:0.4;}
+
+  /* NAV */
+  header{position:sticky; top:0; z-index:60; background:rgba(11,10,8,0.85); backdrop-filter:blur(10px); border-bottom:1px solid var(--line);}
+  nav.wrap{display:flex; align-items:center; justify-content:space-between; height:84px;}
+  .mark{font-family:'Poppins',sans-serif; font-weight:700; font-size:1.05rem; letter-spacing:0.22em;}
+  .mark span{color:var(--gold);}
+  .navlinks{display:flex; gap:34px; font-size:0.74rem; letter-spacing:0.14em; font-weight:600;}
+  .navlinks a{opacity:0.8; transition:opacity .2s, color .2s;}
+  .navlinks a:hover{opacity:1; color:var(--gold);}
+  .navcta{font-size:0.72rem; letter-spacing:0.14em; font-weight:700; border:1px solid var(--gold); color:var(--gold); padding:12px 22px; transition:background .2s, color .2s;}
+  .navcta:hover{background:var(--gold); color:var(--black);}
+  @media(max-width:960px){ .navlinks{display:none;} }
+
+  /* HERO */
+  .hero{position:relative; padding:140px 0 100px; text-align:center; overflow:hidden;}
+  .hero .eyebrow{font-size:0.78rem; color:var(--gray); letter-spacing:0.2em; margin-bottom:8px; position:relative; z-index:1;}
+  .hero h1{
+    position:relative; z-index:1;
+    font-size:clamp(2.4rem,6.4vw,4.6rem); font-weight:300; letter-spacing:0.06em; line-height:1.1;
+  }
+  .hero h1 .accent{color:var(--gold); font-weight:400;}
+  .hero .sub{position:relative; z-index:1; margin-top:26px; font-size:0.9rem; color:var(--gray); letter-spacing:0.18em; font-weight:500;}
+  .hero-ctas{position:relative; z-index:1; display:flex; gap:16px; justify-content:center; margin-top:44px; flex-wrap:wrap;}
+  .btn-gold{background:var(--gold); color:var(--black); padding:17px 32px; font-size:0.78rem; letter-spacing:0.14em; font-weight:700; transition:background .2s;}
+  .btn-gold:hover{background:var(--white);}
+  .btn-line{border:1px solid var(--gold); color:var(--gold); padding:17px 32px; font-size:0.78rem; letter-spacing:0.14em; font-weight:700; transition:all .2s;}
+  .btn-line:hover{background:var(--gold); color:var(--black);}
+
+  /* BADGES */
+  .badges{position:relative; z-index:1; display:grid; grid-template-columns:repeat(4,1fr); border-top:1px solid var(--line); margin-top:80px;}
+  .badge{padding:34px 20px; text-align:center; border-right:1px solid var(--line);}
+  .badge:last-child{border-right:none;}
+  .badge .n{font-size:1.7rem; font-weight:600; color:var(--gold); letter-spacing:0.03em;}
+  .badge .l{font-size:0.68rem; color:var(--gray); text-transform:uppercase; letter-spacing:0.12em; margin-top:6px;}
+  @media(max-width:860px){ .badges{grid-template-columns:repeat(2,1fr);} .badge{border-bottom:1px solid var(--line);} }
+
+  section{padding:110px 0; position:relative;}
+  .section-head{text-align:center; max-width:640px; margin:0 auto 60px;}
+  .section-head .eyebrow{font-size:0.76rem; color:var(--gold); letter-spacing:0.2em; margin-bottom:16px;}
+  .section-head h2{font-size:clamp(1.8rem,3.4vw,2.7rem); font-weight:300; letter-spacing:0.03em;}
+  .section-head h2 .accent{color:var(--gold); font-weight:400;}
+  .border-t{border-top:1px solid var(--line);}
+  .band{background:var(--black2);}
+
+  /* CARD GRID */
+  .card-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line);}
+  .card-grid.flex-center{display:flex; flex-wrap:wrap; justify-content:center; background:none; border:none; gap:1px;}
+  .card-grid.flex-center .pcard{flex:0 1 360px; border:1px solid var(--line);}
+  .pcard{background:var(--black);}
+  .pcard .imgwrap{position:relative; aspect-ratio:4/3; overflow:hidden; background:#1a1815;}
+  .pcard .imgwrap img{width:100%; height:100%; object-fit:cover; filter:grayscale(15%) contrast(1.05);}
+  .ph{width:100%; height:100%; display:flex; align-items:center; justify-content:center; background:repeating-linear-gradient(45deg,#17150F,#17150F 12px,#1F1B14 12px,#1F1B14 24px);}
+  .pcard .status{position:absolute; top:14px; left:14px; background:var(--black); border:1px solid var(--gold); color:var(--gold); font-size:0.62rem; letter-spacing:0.12em; font-weight:700; padding:6px 12px;}
+  .pcard .status.sold{background:var(--gold); color:var(--black); border-color:var(--gold);}
+  .pcard .body{padding:24px 24px 28px;}
+  .pcard .price{font-size:1.3rem; font-weight:600; color:var(--gold); letter-spacing:0.02em;}
+  .pcard .addr{margin-top:8px; font-size:0.95rem; font-weight:500;}
+  .pcard .city{font-size:0.8rem; color:var(--gray); margin-top:3px; letter-spacing:0.04em;}
+  .pcard .meta{margin-top:14px; padding-top:14px; border-top:1px solid var(--line); font-size:0.7rem; color:var(--gray); text-transform:uppercase; letter-spacing:0.1em;}
+  @media(max-width:860px){ .card-grid{grid-template-columns:1fr 1fr;} }
+  @media(max-width:560px){ .card-grid{grid-template-columns:1fr;} }
+
+  /* ABOUT */
+  .about-grid{display:grid; grid-template-columns:0.8fr 1.2fr; gap:70px; align-items:center;}
+  .about-photo{aspect-ratio:4/5; overflow:hidden; background:#1a1815; border:1px solid var(--line);}
+  .about-photo img{width:100%; height:100%; object-fit:cover; filter:grayscale(20%);}
+  .about-photo .mono-ph{background:repeating-linear-gradient(45deg,#17150F,#17150F 12px,#1F1B14 12px,#1F1B14 24px);}
+  .about-photo .mono-ph span{font-size:4rem; font-weight:300; letter-spacing:0.1em; color:var(--gold); opacity:0.7;}
+  .about-copy .role{font-size:0.76rem; color:var(--gold); letter-spacing:0.18em; margin-bottom:10px;}
+  .about-copy h2{font-size:clamp(1.8rem,3vw,2.5rem); font-weight:300; letter-spacing:0.03em;}
+  .about-copy p{margin-top:20px; font-size:0.98rem; color:var(--gray); line-height:1.8;}
+  .stat-row{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line); border:1px solid var(--line); margin-top:32px;}
+  .stat-row .st{background:var(--black); padding:20px 14px; text-align:center;}
+  .stat-row .st .n{font-size:1.35rem; font-weight:600; color:var(--gold);}
+  .stat-row .st .l{font-size:0.64rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--gray); margin-top:6px;}
+  .about-links{display:flex; gap:22px; margin-top:28px; flex-wrap:wrap; font-size:0.85rem;}
+  .about-links a{border-bottom:1px solid var(--line); padding-bottom:3px; transition:border-color .2s, color .2s;}
+  .about-links a:hover{border-color:var(--gold); color:var(--gold);}
+  @media(max-width:860px){ .about-grid{grid-template-columns:1fr;} .stat-row{grid-template-columns:repeat(2,1fr);} }
+
+  /* TESTIMONIALS */
+  .testi-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:var(--line); border:1px solid var(--line);}
+  .testi{background:var(--black); padding:34px 30px;}
+  .testi .stars{color:var(--gold); font-size:0.85rem; letter-spacing:3px; margin-bottom:16px;}
+  .testi p{font-size:1rem; line-height:1.65; font-weight:300; color:var(--white);}
+  .testi .who{margin-top:20px; font-size:0.72rem; color:var(--gray); text-transform:uppercase; letter-spacing:0.1em;}
+  @media(max-width:760px){ .testi-grid{grid-template-columns:1fr;} }
+
+  /* MARKET UPDATES */
+  .update-grid{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--line); border:1px solid var(--line);}
+  .update{background:var(--black); padding:38px 34px;}
+  .update .tag{font-size:0.7rem; letter-spacing:0.14em; color:var(--gold); font-weight:700;}
+  .update h3{margin-top:14px; font-size:1.3rem; font-weight:400; letter-spacing:0.02em;}
+  .update p{margin-top:14px; font-size:0.9rem; color:var(--gray); line-height:1.7;}
+  .update a{display:inline-block; margin-top:20px; font-size:0.72rem; letter-spacing:0.1em; font-weight:700; color:var(--gold); border-bottom:1px solid var(--gold); padding-bottom:3px;}
+  @media(max-width:760px){ .update-grid{grid-template-columns:1fr;} }
+
+  /* SCHEDULE */
+  .schedule{text-align:center;}
+  .schedule h2{font-size:clamp(1.7rem,3vw,2.4rem); max-width:680px; margin:0 auto; font-weight:300; font-style:italic; line-height:1.5;}
+  .schedule h2 .accent{color:var(--gold); font-style:normal; font-weight:400;}
+  .calendly-inline-widget{margin:50px auto 0;}
+
+  /* TEAM LINK-OUT */
+  .team-card{border:1px solid var(--gold); padding:60px 54px; display:grid; grid-template-columns:1.2fr 0.8fr; gap:44px; align-items:center;}
+  .team-card .tag{font-size:0.74rem; letter-spacing:0.16em; color:var(--gold); font-weight:700;}
+  .team-card h3{margin-top:14px; font-size:1.6rem; font-weight:300; line-height:1.4; letter-spacing:0.02em;}
+  .team-card p{margin-top:16px; color:var(--gray); font-size:0.95rem; line-height:1.75; max-width:460px;}
+  .team-card .cta{margin-top:26px; display:inline-block; background:var(--gold); color:var(--black); padding:15px 28px; font-size:0.75rem; letter-spacing:0.12em; font-weight:700; transition:background .2s;}
+  .team-card .cta:hover{background:var(--white);}
+  .team-mini{display:flex; flex-direction:column; gap:1px; background:var(--line);}
+  .team-mini .m{background:var(--black); padding:18px 20px; display:flex; justify-content:space-between; font-size:0.85rem; border:1px solid var(--line);}
+  .team-mini .m span:last-child{color:var(--gold); font-weight:600;}
+  @media(max-width:860px){ .team-card{grid-template-columns:1fr; padding:44px 30px;} }
+
+  /* CONTACT */
+  .contact-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line); border:1px solid var(--line);}
+  .cway{background:var(--black); padding:34px 24px; text-align:center;}
+  .cway .l{font-size:0.68rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--gray);}
+  .cway .v{margin-top:12px; font-size:1rem; font-weight:400;}
+  .cway a:hover{color:var(--gold);}
+  @media(max-width:760px){ .contact-grid{grid-template-columns:1fr 1fr;} }
+  @media(max-width:480px){ .contact-grid{grid-template-columns:1fr;} }
+
+  footer{padding:34px 0; text-align:center; font-size:0.68rem; color:var(--gray); letter-spacing:0.1em; border-top:1px solid var(--line);}
+
+  /* CONNECT FORM */
+  .connect-grid{display:grid; grid-template-columns:1.4fr 0.6fr; gap:60px; align-items:start;}
+  .connect-form{display:flex; flex-direction:column; gap:22px;}
+  .ffield{display:flex; flex-direction:column; gap:10px;}
+  .ffield label{font-size:0.7rem; letter-spacing:0.14em; color:var(--gray);}
+  .ffield input, .ffield select, .ffield textarea{
+    background:var(--black2); border:1px solid var(--line); color:var(--white);
+    padding:14px 16px; font-family:'Poppins',sans-serif; font-size:0.92rem; border-radius:0;
+    outline:none; transition:border-color .2s;
+  }
+  .ffield input::placeholder, .ffield textarea::placeholder{color:#5c584f;}
+  .ffield input:focus, .ffield select:focus, .ffield textarea:focus{border-color:var(--gold);}
+  .ffield textarea{resize:vertical;}
+  .connect-form button{align-self:flex-start; margin-top:6px; border:none; cursor:pointer;}
+  .hp-field{position:absolute; left:-9999px; opacity:0; pointer-events:none;}
+
+  .agent-card{
+    background:var(--black2); border:1px solid var(--line); border-top:3px solid var(--gold);
+    padding:30px 26px; max-width:320px;
+  }
+  .ac-name{font-size:1.05rem; font-weight:600; letter-spacing:0.06em;}
+  .ac-role{font-size:0.68rem; color:var(--gold); letter-spacing:0.1em; margin-top:6px;}
+  .ac-row{display:flex; align-items:center; gap:10px; margin-top:18px; font-size:0.88rem;}
+  .ac-row a:hover{color:var(--gold);}
+  .ac-ig{margin-top:14px; font-size:0.85rem; color:var(--gray);}
+  .ac-ig a:hover{color:var(--gold);}
+  .ac-btn{
+    display:inline-block; margin-top:22px; border:1px solid var(--gold); color:var(--gold);
+    padding:13px 22px; font-size:0.72rem; letter-spacing:0.12em; font-weight:700; transition:all .2s;
+  }
+  .ac-btn:hover{background:var(--gold); color:var(--black);}
+  @media(max-width:860px){ .connect-grid{grid-template-columns:1fr;} .agent-card{max-width:none;} }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <div class="mark">HOMES<span>WITHBAS</span></div>
+    <div class="navlinks upp">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#listings">Featured</a>
+      <a href="#sold">Sold</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#updates">Market Updates</a>
+      <a href="#schedule">Schedule</a>
+    </div>
+    <a class="navcta upp" href="#contact">Let's Connect</a>
+  </nav>
+</header>
+
+<section class="hero" id="home">
+  <div class="diagbg">
+    <svg class="tr" viewBox="0 0 400 400"><g stroke="#C9A35A" stroke-width="1.5">
+      <line x1="0" y1="400" x2="400" y2="0"/><line x1="40" y1="400" x2="440" y2="0"/><line x1="80" y1="400" x2="480" y2="0"/>
+      <line x1="120" y1="400" x2="520" y2="0"/><line x1="160" y1="400" x2="560" y2="0"/><line x1="200" y1="400" x2="600" y2="0"/>
+      <line x1="240" y1="400" x2="640" y2="0"/><line x1="280" y1="400" x2="680" y2="0"/>
+    </g></svg>
+    <svg class="bl" viewBox="0 0 400 400"><g stroke="#C9A35A" stroke-width="1.5">
+      <line x1="0" y1="400" x2="400" y2="0"/><line x1="-40" y1="400" x2="360" y2="0"/><line x1="-80" y1="400" x2="320" y2="0"/>
+      <line x1="-120" y1="400" x2="280" y2="0"/><line x1="-160" y1="400" x2="240" y2="0"/><line x1="-200" y1="400" x2="200" y2="0"/>
+    </g></svg>
+  </div>
+  <div class="wrap">
+    <div class="eyebrow upp">Broker · RE/MAX Legends</div>
+    <h1 class="upp">HOMES<span class="accent">WITHBAS</span></h1>
+    <div class="sub upp">Chicagoland Real Estate &nbsp;·&nbsp; RE/MAX Legends</div>
+    <div class="hero-ctas">
+      <a class="btn-gold upp" href="#contact">Sell Your Home</a>
+      <a class="btn-line upp" href="#listings">Find Your New Home</a>
+    </div>
+  </div>
+  <div class="badges wrap">
+    <div class="badge"><div class="n">5.0 ★</div><div class="l">Google Rating</div></div>
+    <div class="badge"><div class="n">49</div><div class="l">Google Reviews</div></div>
+    <div class="badge"><div class="n">71</div><div class="l">Homes Sold</div></div>
+    <div class="badge"><div class="n">$25.6M</div><div class="l">Career Volume</div></div>
+  </div>
+</section>
+
+<section id="listings" class="border-t">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow upp">Featured Properties</div>
+      <h2>Current <span class="accent">Listings</span></h2>
+    </div>
+    <div class="card-grid flex-center" id="listings-grid">
+      <div class="pcard">
+        <div class="imgwrap">
+          <span class="status upp">For Sale</span>
+          <img src="https://images.homes.com/listings/112/6760193574-371519412/13513-s-baltimore-ave-chicago-il-primaryphoto.jpg" alt="13513 S Baltimore Ave">
+        </div>
+        <div class="body">
+          <div class="price">$199,900</div>
+          <div class="addr">13513 S Baltimore Ave</div>
+          <div class="city">Chicago, IL</div>
+          <div class="meta">10 Beds · 4 Baths · Investment</div>
+        </div>
+      </div>
+      <div class="pcard">
+        <div class="imgwrap">
+          <span class="status upp">For Sale</span>
+          <img src="https://ssl.cdn-redfin.com/photo/68/bigphoto/873/12702873_0.jpg" alt="13223 S Buffalo Ave">
+        </div>
+        <div class="body">
+          <div class="price">$189,900</div>
+          <div class="addr">13223 S Buffalo Ave</div>
+          <div class="city">Chicago, IL</div>
+          <div class="meta">3 Beds · 2 Baths · 1,100 Sq.Ft.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="sold" class="band border-t">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow upp">Track Record</div>
+      <h2>Recently <span class="accent">Sold</span></h2>
+    </div>
+    <div class="card-grid" id="sold-grid">
+      <div class="pcard">
+        <div class="imgwrap"><span class="status sold upp">Sold</span><img src="https://images.homes.com/listings/102/9619394163-890470961/20263-brendan-st-frankfort-il-primaryphoto.jpg" alt="20263 Brendan St"></div>
+        <div class="body"><div class="price">$635,000</div><div class="addr">20263 Brendan St</div><div class="city">Frankfort, IL</div><div class="meta">Represented the Seller · 2% Above List</div></div>
+      </div>
+      <div class="pcard">
+        <div class="imgwrap"><span class="status sold upp">Sold</span><img src="https://images.homes.com/listings/112/0618308244-476085102/10900-beth-dr-orland-park-il-primaryphoto.jpg" alt="10900 Beth Dr"></div>
+        <div class="body"><div class="price">$576,800</div><div class="addr">10900 Beth Dr</div><div class="city">Orland Park, IL</div><div class="meta">Represented the Seller</div></div>
+      </div>
+      <div class="pcard">
+        <div class="imgwrap"><span class="status sold upp">Sold</span><img src="https://images.homes.com/listings/112/7135377344-088198102/15913-rankin-dr-lockport-il-primaryphoto.jpg" alt="15913 Rankin Dr"></div>
+        <div class="body"><div class="price">$365,000</div><div class="addr">15913 Rankin Dr</div><div class="city">Lockport, IL</div><div class="meta">Represented the Seller · 7% Above List</div></div>
+      </div>
+      <div class="pcard">
+        <div class="imgwrap"><span class="status sold upp">Sold</span><img src="https://images.homes.com/listings/117/4045821124-642681491/4312-w-potomac-ave-chicago-il-primaryphoto.jpg" alt="4312 W Potomac Ave"></div>
+        <div class="body"><div class="price">$320,000</div><div class="addr">4312 W Potomac Ave</div><div class="city">Chicago, IL</div><div class="meta">Represented the Seller · 10% Above List</div></div>
+      </div>
+      <div class="pcard">
+        <div class="imgwrap"><span class="status sold upp">Sold</span><img src="https://images.homes.com/listings/102/8699607044-048153002/15141-quail-hollow-dr-orland-park-il-unit-106-primaryphoto.jpg" alt="15141 Quail Hollow Dr"></div>
+        <div class="body"><div class="price">$190,000</div><div class="addr">15141 Quail Hollow Dr</div><div class="city">Orland Park, IL</div><div class="meta">Represented the Seller</div></div>
+      </div>
+      <div class="pcard">
+        <div class="imgwrap"><span class="status sold upp">Sold</span><img src="https://images.homes.com/listings/102/1456169483-899463771/10431-s-tod-dr-palos-hills-il-primaryphoto.jpg" alt="10431 S Tod Dr"></div>
+        <div class="body"><div class="price">$385,000</div><div class="addr">10431 S Tod Dr</div><div class="city">Palos Hills, IL</div><div class="meta">Represented the Seller</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="border-t">
+  <div class="wrap about-grid">
+    <div class="about-photo">
+      <img src="https://media-production.lp-cdn.com/cdn-cgi/image/format=auto,quality=85,fit=scale-down,width=960/https://media-production.lp-cdn.com/media/seglxua7lvn1ohhj0dkd" alt="Basil Kawash">
+    </div>
+    <div class="about-copy">
+      <div class="role upp">Broker · RE/MAX Legends</div>
+      <h2>Basil Kawash</h2>
+      <p>Known for being honest, direct, and relentless on behalf of his clients across Chicago and the southwest suburbs. When Basil negotiates for you, it's as if he's negotiating for his own family — from the first showing to the closing table.</p>
+      <div class="stat-row">
+        <div class="st"><div class="n">5.0★</div><div class="l">Rating</div></div>
+        <div class="st"><div class="n">49</div><div class="l">Reviews</div></div>
+        <div class="st"><div class="n">71</div><div class="l">Sold</div></div>
+        <div class="st"><div class="n">$25.6M</div><div class="l">Volume</div></div>
+      </div>
+      <div class="about-links">
+        <a href="tel:7085391979">(708) 539-1979</a>
+        <a href="https://www.instagram.com/homeswithbas" target="_blank">@homeswithbas</a>
+        <a href="mailto:homeswithbas@gmail.com">homeswithbas@gmail.com</a>
+        <span style="color:var(--gray);">IL License #475195210</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="testimonials" class="band border-t">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow upp">Client Testimonials</div>
+      <h2>What Clients <span class="accent">Say</span></h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi">
+        <div class="stars">★★★★★</div>
+        <p>"From start to finish, Basil was professional, knowledgeable, and genuinely cared about finding the perfect place. He was always available."</p>
+        <div class="who upp">— Salah Muthana, Google</div>
+      </div>
+      <div class="testi">
+        <div class="stars">★★★★★</div>
+        <p>"He has a great work ethic and truly cares about getting you the house you want."</p>
+        <div class="who upp">— Anna Namos, Google</div>
+      </div>
+      <div class="testi">
+        <div class="stars">★★★★★</div>
+        <p>"Transparent and tells you things as is — he will only sell you a home that he himself would buy."</p>
+        <div class="who upp">— Odai Aldawoud, Google</div>
+      </div>
+      <div class="testi">
+        <div class="stars">★★★★★</div>
+        <p>"Working with Basil on our first home was incredibly smooth and seamless. He was exceptionally accommodating with scheduling, understanding that as busy professionals flexibility mattered."</p>
+        <div class="who upp">— Gen &amp; Maen, Google</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="updates" class="border-t">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow upp">Homeswithbas In The Know</div>
+      <h2>Weekly Market <span class="accent">Updates</span></h2>
+    </div>
+    <div class="update-grid">
+      <div class="update">
+        <div class="tag upp">Every Friday</div>
+        <h3>City of Chicago Market Update</h3>
+        <p>Median prices, days on market, and inventory — broken down fresh every week so you know exactly where the city stands.</p>
+        <a class="upp" href="https://www.facebook.com/BasilKawashRealtor" target="_blank">Follow on Facebook →</a>
+      </div>
+      <div class="update">
+        <div class="tag upp">Every Friday</div>
+        <h3>Southwest Suburbs Market Update</h3>
+        <p>Palos Hills, Orland Park, Tinley Park, and beyond — the suburban numbers that matter for buyers and sellers.</p>
+        <a class="upp" href="https://www.instagram.com/homeswithbas" target="_blank">Follow on Instagram →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="schedule band border-t" id="schedule">
+  <div class="wrap">
+    <div class="section-head" style="margin-bottom:0;">
+      <div class="eyebrow upp">Book a Meeting</div>
+      <h2>Schedule time with <span class="accent">Basil</span> directly</h2>
+    </div>
+    <div class="calendly-inline-widget" data-url="https://calendly.com/homeswithbas?hide_event_type_details=1&hide_gdpr_banner=1&background_color=0b0a08&text_color=f5f3ee&primary_color=c9a35a" style="min-width:280px; height:700px; max-width:900px; margin:50px auto 0; border:1px solid var(--line);"></div>
+    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+  </div>
+</section>
+
+<section class="border-t">
+  <div class="wrap">
+    <div class="team-card">
+      <div>
+        <div class="tag upp">The Team</div>
+        <h3>Basil is Team Lead of the REZIDE Group at RE/MAX Legends.</h3>
+        <p>Beyond his own deals, Basil leads a full team of bilingual agents serving buyers, sellers, and investors across Chicago and the southwest suburbs.</p>
+        <a class="cta upp" href="https://therezidegroup.com" target="_blank">Visit REZIDE Group →</a>
+      </div>
+      <div class="team-mini">
+        <div class="m"><span>Team Size</span><span>4 Agents</span></div>
+        <div class="m"><span>Team Rating</span><span>5.0 ★</span></div>
+        <div class="m"><span>Languages</span><span>EN · AR</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="band border-t">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow upp">Let's Connect</div>
+      <h2>Tell Basil About Your <span class="accent">Move</span></h2>
+    </div>
+    <div class="connect-grid">
+      <form class="connect-form" id="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="return sendInquiry(event)">
+        <input type="hidden" name="form-name" value="contact">
+        <p class="hp-field"><label>Leave this field blank: <input name="bot-field"></label></p>
+        <div class="ffield">
+          <label class="upp" for="f-name">Full Name</label>
+          <input type="text" id="f-name" name="name" placeholder="Your name" required>
+        </div>
+        <div class="ffield">
+          <label class="upp" for="f-email">Email</label>
+          <input type="email" id="f-email" name="email" placeholder="you@email.com" required>
+        </div>
+        <div class="ffield">
+          <label class="upp" for="f-phone">Phone</label>
+          <input type="tel" id="f-phone" name="phone" placeholder="(xxx) xxx-xxxx" oninput="formatPhoneInput(this)" maxlength="14">
+        </div>
+        <div class="ffield">
+          <label class="upp" for="f-interest">Interested In</label>
+          <select id="f-interest" name="interest">
+            <option>Selling &amp; Buying</option>
+            <option>Selling</option>
+            <option>Buying</option>
+            <option>Renting</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="ffield">
+          <label class="upp" for="f-message">Message</label>
+          <textarea id="f-message" name="message" rows="5" placeholder="Tell us about your situation..."></textarea>
+        </div>
+        <button type="submit" class="btn-gold upp" style="border:none; cursor:pointer;">Send Message</button>
+      </form>
+      <div id="form-success" style="display:none; padding:30px; border:1px solid var(--gold); background:var(--black2);">
+        <div class="upp" style="color:var(--gold); font-size:0.78rem; letter-spacing:0.14em; margin-bottom:10px;">Message Sent</div>
+        <p style="color:var(--gray); font-size:0.95rem;">Thanks for reaching out — Basil will get back to you shortly.</p>
+      </div>
+
+      <div class="agent-card">
+        <div class="ac-name upp">Basil Kawash</div>
+        <div class="ac-role upp">Team Lead · Broker</div>
+        <div class="ac-row"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="#9A968D" stroke-width="1.6"><path d="M4 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L14 13l5 2v4a2 2 0 0 1-2 2A15 15 0 0 1 4 6a2 2 0 0 1 0-2z"/></svg><a href="tel:7085391979">(708) 539-1979</a></div>
+        <div class="ac-row"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="#9A968D" stroke-width="1.6"><path d="M3 5h18v14H3z"/><path d="M3 5l9 7 9-7"/></svg><a href="mailto:homeswithbas@gmail.com">homeswithbas@gmail.com</a></div>
+        <div class="ac-ig">Instagram: <a href="https://www.instagram.com/homeswithbas" target="_blank">@homeswithbas</a></div>
+        <a class="ac-btn upp" href="https://calendly.com/homeswithbas" target="_blank">Book on Calendly</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="upp">HOMES WITH BAS · BASIL KAWASH, BROKER/ASSOCIATE · RE/MAX LEGENDS · IL LICENSE #475195210 — © 2026 · EQUAL HOUSING OPPORTUNITY</footer>
+
+<script>
+function formatPhoneInput(el){
+  let digits = el.value.replace(/\D/g,'').slice(0,10);
+  let formatted = digits;
+  if(digits.length > 6){
+    formatted = '(' + digits.slice(0,3) + ') ' + digits.slice(3,6) + '-' + digits.slice(6);
+  } else if(digits.length > 3){
+    formatted = '(' + digits.slice(0,3) + ') ' + digits.slice(3);
+  } else if(digits.length > 0){
+    formatted = '(' + digits;
+  }
+  el.value = formatted;
+}
+
+function sendInquiry(e){
+  e.preventDefault();
+  const form = document.getElementById('contact-form');
+  const data = new FormData(form);
+
+  fetch('/', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+    body: new URLSearchParams(data).toString()
+  })
+  .then(() => {
+    form.style.display = 'none';
+    document.getElementById('form-success').style.display = 'block';
+  })
+  .catch(() => {
+    alert("Something went wrong sending your message — please try again, or email homeswithbas@gmail.com directly.");
+  });
+
+  return false;
+}
+</script>
+
+</body>
+</html>
